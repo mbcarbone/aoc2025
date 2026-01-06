@@ -11,12 +11,15 @@ answer = 0
 for move in rotations:
     prev = pos
     pos += move
+    # This one line replaces the entire if/else block above:
+
+    answer += abs((pos - (move < 0)) // 100 - (prev - (move < 0)) // 100)
     
     # Calculate how many "100 boundaries" exist between prev and pos
-    if move > 0:
-        answer += pos // 100 - prev // 100
-    else:
+    #if move > 0:
+    #    answer += pos // 100 - prev // 100
+    #else:
         # For Left moves, we shift by -1 to handle the "landing on 0" logic correctly
-        answer += (prev - 1) // 100 - (pos - 1) // 100
+    #    answer += (prev - 1) // 100 - (pos - 1) // 100
 
 print(answer)
