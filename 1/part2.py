@@ -1,25 +1,34 @@
-#!/bin/python
-# AOC 1 - Part 2 (Infinite Dial Variant)
+#!/usr/bin/env python3
+# AOC 1 - Part 2: Count Hits on Zero
 
-with open('input.txt') as f:
-    # Convert "R50" -> 50 and "L20" -> -20 in one pass
-    rotations = [(1 if x[0] == 'R' else -1) * int(x[1:]) for x in f.read().split()]
+def solve_part2(filename='input.txt'):
+    """
+    Counts how many times the dial passes or lands on '0'.
+    Optimized: Uses 'Infinite Dial' logic (Absolute Position).
+    """
+    try:
+        with open(filename, 'r') as f:
+            # Convert "R50" -> 50 and "L20" -> -20 in one pass
+            rotations = [(1 if x[0] == 'R' else -1) * int(x[1:]) for x in f.read().split()]
+    except FileNotFoundError:
+        print(f"Error: {filename} not found.")
+        return None
 
-pos = 50  # Absolute position (can go above 100 or below 0)
-answer = 0
+    pos = 50  # Absolute position (can go >100 or <0)
+    answer = 0
 
-for move in rotations:
-    prev = pos
-    pos += move
-    # This one line replaces the entire if/else block above:
+    for move in rotations:
+        prev = pos
+        pos += move
+        
+        # Mathematical "Mic Drop":
+        # Calculates how many "100 boundaries" were crossed between prev and pos.
+        # (move < 0) acts as a boolean switch (0 or 1) to handle the Left-turn offset.
+        answer += abs((pos - (move < 0)) // 100 - (prev - (move < 0)) // 100)
 
-    answer += abs((pos - (move < 0)) // 100 - (prev - (move < 0)) // 100)
-    
-    # Calculate how many "100 boundaries" exist between prev and pos
-    #if move > 0:
-    #    answer += pos // 100 - prev // 100
-    #else:
-        # For Left moves, we shift by -1 to handle the "landing on 0" logic correctly
-    #    answer += (prev - 1) // 100 - (pos - 1) // 100
+    return answer
 
-print(answer)
+if __name__ == "__main__":
+    result = solve_part2()
+    if result is not None:
+        print(f"Part 2 (Password Count): {result}")
