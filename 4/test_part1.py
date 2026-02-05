@@ -14,11 +14,23 @@ class TestDay4Part1(unittest.TestCase):
         with open(self.test_file, 'w') as f:
             f.write(content)
 
-    def test_example(self):
-        # self.create_input("EXAMPLE_DATA")
-        # result = solve_part1(self.test_file)
-        # self.assertEqual(result, EXPECTED_VALUE)
-        pass
+    def test_example_scenario(self):
+        # The example from the prompt (Expected: 13)
+        data = (
+            "..@@.@@@@.\n"
+            "@@@.@.@.@@\n"
+            "@@@@@.@.@@\n"
+            "@.@@@@..@.\n"
+            "@@.@@@@.@@\n"
+            ".@@@@@@@.@\n"
+            ".@.@.@.@@@\n"
+            "@.@@@.@@@@\n"
+            ".@@@@@@@@.\n"
+            "@.@.@@@.@."
+        )
+        self.create_input(data)
+        result = solve_part1(self.test_file)
+        self.assertEqual(result, 13)
 
 if __name__ == '__main__':
     unittest.main()
