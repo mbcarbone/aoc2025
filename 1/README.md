@@ -22,3 +22,9 @@ This repository contains the solution for Day 1 of the Advent of Code 2025 chall
 ├── part2.py               # Part 2 solution (Mathematical O(1) approach)
 ├── test_part1.py          # Unit tests for Part 1
 └── test_part2.py          # Unit tests for Part 2
+```
+
+```shell
+pip install numpy
+./run_all.sh
+```

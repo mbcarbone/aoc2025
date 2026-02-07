@@ -38,3 +38,9 @@ To maximize a 12-digit subsequence, we effectively need to **remove** $K$ digits
 ├── test_part1.py          # Unit tests for Part 1
 ├── test_part2.py          # Unit tests for Part 2=
 └── run_all.sh             # Automation script (Tests + Execution)
+```
+
+```shell
+pip install numpy
+./run_all.sh
+```

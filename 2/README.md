@@ -25,3 +25,9 @@ Solution for Day 2 of the Advent of Code 2025 challenge. The puzzle involves sca
 ├── test_part1.py          # Unit tests for Part 1
 ├── test_part2.py          # Unit tests for Part 2
 └── run_all.sh             # Automation script
+```
+
+```shell
+pip install numpy
+./run_all.sh
+```
