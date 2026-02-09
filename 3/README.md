@@ -44,3 +44,7 @@ To maximize a 12-digit subsequence, we effectively need to **remove** $K$ digits
 pip install numpy
 ./run_all.sh
 ```
+### Execution
+1.  Paste the code into the `3/` folder files.
+2.  Run the tests (`./run_all.sh`).
+3.  If they pass, paste your input and get that star!

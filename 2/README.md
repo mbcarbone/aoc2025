@@ -31,3 +31,7 @@ Solution for Day 2 of the Advent of Code 2025 challenge. The puzzle involves sca
 pip install numpy
 ./run_all.sh
 ```
+### Execution
+1.  Paste the code into the `2/` folder files.
+2.  Run the tests (`./run_all.sh`).
+3.  If they pass, paste your input and get that star!

@@ -28,3 +28,7 @@ This repository contains the solution for Day 1 of the Advent of Code 2025 chall
 pip install numpy
 ./run_all.sh
 ```
+### Execution
+1.  Paste the code into the `1/` folder files.
+2.  Run the tests (`./run_all.sh`).
+3.  If they pass, paste your input and get that star!

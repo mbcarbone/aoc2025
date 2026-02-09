@@ -53,3 +53,7 @@ Instead of iterating through every cell $(x, y)$ to count neighbors ($O(N)$ Pyth
 pip install numpy
 ./run_all.sh
 ```
+### Execution
+1.  Paste the code into the `4/` folder files.
+2.  Run the tests (`./run_all.sh`).
+3.  If they pass, paste your input and get that star!
