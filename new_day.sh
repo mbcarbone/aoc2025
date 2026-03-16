@@ -85,32 +85,26 @@ EOT
 
     # 5. Check test_part1.py
     if [ ! -f "$DIR/test_part1.py" ]; then
-        cat <<EOT > "$DIR/test_part1.py"
+	    # Generate safe test_part1.py
+cat << 'EOF' > test_part1.py
 import unittest
 import os
 from part1 import solve_part1
 
-class TestDay${DAY}Part1(unittest.TestCase):
+class TestPart1(unittest.TestCase):
     def setUp(self):
         self.test_file = 'test_input.txt'
 
-    def tearDown(self):
-        if os.path.exists(self.test_file):
-            os.remove(self.test_file)
+    def test_logic(self):
+        if not os.path.exists(self.test_file):
+            self.skipTest(f"Missing {self.test_file}. Please create it and paste the example data.")
 
-    def create_input(self, content):
-        with open(self.test_file, 'w') as f:
-            f.write(content)
-
-    def test_example(self):
-        # self.create_input("EXAMPLE_DATA")
-        # result = solve_part1(self.test_file)
+        result = solve_part1(self.test_file)
         # self.assertEqual(result, EXPECTED_VALUE)
-        pass
 
 if __name__ == '__main__':
     unittest.main()
-EOT
+EOF
         echo "  [+] Created test_part1.py"
     else
         echo "  [~] test_part1.py exists (Skipped)"
@@ -118,32 +112,26 @@ EOT
 
     # 6. Check test_part2.py
     if [ ! -f "$DIR/test_part2.py" ]; then
-        cat <<EOT > "$DIR/test_part2.py"
+    # Generate safe test_part2.py
+cat << 'EOF' > test_part2.py
 import unittest
 import os
 from part2 import solve_part2
 
-class TestDay${DAY}Part2(unittest.TestCase):
+class TestPart2(unittest.TestCase):
     def setUp(self):
         self.test_file = 'test_input.txt'
 
-    def tearDown(self):
-        if os.path.exists(self.test_file):
-            os.remove(self.test_file)
+    def test_logic(self):
+        if not os.path.exists(self.test_file):
+            self.skipTest(f"Missing {self.test_file}. Please create it and paste the example data.")
 
-    def create_input(self, content):
-        with open(self.test_file, 'w') as f:
-            f.write(content)
-
-    def test_example(self):
-        # self.create_input("EXAMPLE_DATA")
         # result = solve_part2(self.test_file)
         # self.assertEqual(result, EXPECTED_VALUE)
-        pass
 
 if __name__ == '__main__':
     unittest.main()
-EOT
+EOF
         echo "  [+] Created test_part2.py"
     else
         echo "  [~] test_part2.py exists (Skipped)"
