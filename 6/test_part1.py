@@ -5,7 +5,7 @@ from part1 import solve_part1
 class TestDay6Part1(unittest.TestCase):
     def setUp(self):
         # Point to the file you already created
-        self.test_file = 'test_input.txt'
+        self.test_file = 'input_test.txt'
 
     # We removed tearDown entirely so it never deletes your file!
 

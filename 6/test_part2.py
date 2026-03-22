@@ -4,11 +4,11 @@ from part2 import solve_part2
 
 class TestDay6Part2(unittest.TestCase):
     def setUp(self):
-        self.test_file = 'test_input.txt'
-
-    def tearDown(self):
-        if os.path.exists(self.test_file):
-            os.remove(self.test_file)
+        self.test_file = 'input_test.txt'
+# comment out teardown for test files
+#    def tearDown(self):
+#        if os.path.exists(self.test_file):
+#            os.remove(self.test_file)
 
     def create_input(self, content):
         with open(self.test_file, 'w') as f:
